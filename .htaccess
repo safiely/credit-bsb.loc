@@ -1,0 +1,28 @@
+Options All -ExecCGI -Indexes -Includes +FollowSymLinks
+
+#Индексный файл
+DirectoryIndex index.php
+
+#Часовой пояс
+<IfModule mod_setenvif.c>
+    SetEnv TZ Europe/Moscow
+</IfModule>
+
+#Отключить отображения информации о сервере
+ServerSignature Off
+
+#Сжимать файлы
+<ifModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+</ifModule>
+
+#Отключение волшебных кавычек
+php_flag magic_quotes_gpc Off
+
+#Обработка ошибок
+# Not found
+ErrorDocument 404 /404.php
+
+# Кодировка по умолчанию UTF-8
+AddDefaultCharset utf-8
+AddType 'text/html; charset=utf-8' .html .htm .shtml
