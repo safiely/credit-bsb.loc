@@ -1,4 +1,5 @@
 <?php
+/*Я тут!!!*/
 require_once 'config/config.php';
 
 // подключение контроллера
